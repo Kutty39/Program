@@ -40,10 +40,11 @@ public class Main {
 
     private static void PrimeFactors() {
         String tmp = "";
-        int it = 0, pm = 0,i=0;
+        boolean prmflag = true;
+        int it = 0, pm = 0, i = 0;
         while (!(tmp.toUpperCase().equals("Q"))) {
             pm = 0;
-            i=2;
+            i = 2;
             System.out.print("Please enter any number(not 'Zero') :");
             in.reset();
             in = new Scanner(System.in);
@@ -53,14 +54,24 @@ public class Main {
             }
 
             if (isint(tmp)) {
-                while( i*i <= it ){
-                    if(it%i==0){
-                        for (int j = 2; j < i; j++) {
-
+                it = Integer.parseInt(tmp);
+                System.out.print("Prime factor for " + it + " is ");
+                for (int j = 2; j * j <= it; j++) {
+                    prmflag = true;
+                    for (int k = 2; k < j; k++) {
+                        if (j % k == 0) {
+                            prmflag = false;
+                            break;
                         }
                     }
-                    ++i;
+                    if (prmflag) {
+                        while (it % j == 0) {
+                            it = it / j;
+                            System.out.print(j + "*");
+                        }
+                    }
                 }
+                System.out.println(it);
             }
         }
     }
