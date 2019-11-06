@@ -31,11 +31,11 @@ public class Main {
                     q.StopTime();
                 }
                 break;
-            /*case "4":
-                WindChill wc =new WindChill();
-                System.out.println(wc.chill(26,60));
+            case "4":
+                CrossGame wc =new CrossGame();
+
                 break;
-            case "5":
+            /*case "5":
                 Triplets tp=new Triplets();
                 tp.tripletfinder();
                 break;*/
