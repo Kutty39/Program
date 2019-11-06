@@ -16,11 +16,11 @@ public class Main {
                 CouponNumber cp = new CouponNumber();
                 System.out.println(cp.distictcoupon(100));
                 break;
-            /*case "3":
-                Quadratic q =new Quadratic();
-                System.out.println(q.rootfinder(5,6,8));
+            case "3":
+                Stopwatch q =new Stopwatch();
+                q.StartTime();
                 break;
-            case "4":
+            /*case "4":
                 WindChill wc =new WindChill();
                 System.out.println(wc.chill(26,60));
                 break;
