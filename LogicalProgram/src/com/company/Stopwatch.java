@@ -12,6 +12,6 @@ public class Stopwatch {
     }
     public void StopTime(){
         stop = Instant.now();
-        System.out.println(Duration.between(start,stop).toMinutes());
+        System.out.println(Duration.between(start,stop).getSeconds()+" Seconds");
     }
 }

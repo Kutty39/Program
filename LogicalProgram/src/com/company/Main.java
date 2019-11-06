@@ -17,8 +17,19 @@ public class Main {
                 System.out.println(cp.distictcoupon(100));
                 break;
             case "3":
-                Stopwatch q =new Stopwatch();
-                q.StartTime();
+                Stopwatch q = new Stopwatch();
+                in.reset();
+                System.out.println("Please enter 'S' to start");
+                if (in.nextLine().toUpperCase().equals("S")) {
+                    q.StartTime();
+                    in.reset();
+                    System.out.println("Please enter 'P' to start");
+                    while (!in.nextLine().toUpperCase().equals("P")){
+                        System.out.println("Please enter 'P' to start");
+                        in.reset();
+                    }
+                    q.StopTime();
+                }
                 break;
             /*case "4":
                 WindChill wc =new WindChill();
