@@ -4,19 +4,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Gambler {
-    static double tmp = 0, stk = 0, goal = 0, game = 0, win = 0, loss = 0;
+    private static double game = 0, win = 0, loss = 0;
 
     public Gambler() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter $Stake:");
         sc.reset();
-        stk = sc.nextInt();
+        int stk = sc.nextInt();
         System.out.println("Please enter $Goal:");
         sc.reset();
-        goal = sc.nextInt();
+        int goal = sc.nextInt();
         while (stk < goal && stk != 0) {
             Random random = new Random();
-            tmp = random.nextFloat();
+            float tmp = random.nextFloat();
             if (tmp > 0.5) {
                 ++win;
                 ++stk;
