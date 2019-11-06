@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("1.Gambler\n2.Coupon Number\n3.Root finder\n4.WindChill\n5.Triplets\nSelect any option from the above:");
+        System.out.println("1.Gambler\n2.Coupon Number\n3.Root finder\n4.Tik tac\nSelect any option from the above:");
         Scanner in = new Scanner(System.in);
         in.reset();
         switch (in.nextLine()) {
@@ -33,7 +33,6 @@ public class Main {
                 break;
             case "4":
                 CrossGame wc =new CrossGame();
-
                 break;
             /*case "5":
                 Triplets tp=new Triplets();
