@@ -5,11 +5,11 @@ public class Permutations {
     //static String tmp = "";
     private static String[] outstr;
 
-    public Permutations(String s) {
+    public static String[] findPermutations(String s) {
         outstr = new String[lenOfArry(s.length())];
         recursion(s, 0);
-        //itration(s);
-        System.out.println(outstr.toString());
+        k=0;
+        return outstr;
     }
 
    /* private static String swap(String sj, int from) {
@@ -31,7 +31,6 @@ public class Permutations {
     private static void recursion(String s, int from) {
         if (from == s.length()) {
             outstr[k] = s;
-            System.out.println(s);
             ++k;
         } else {
             for (int i = from; i < s.length(); i++) {

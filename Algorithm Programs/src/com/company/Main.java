@@ -14,20 +14,20 @@ public class Main {
         String filepath;
         String[] words;
         Scanner sc = new Scanner(System.in);
-        System.out.println("1.Recursive Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Merge Sort\nSelect the option from above.");
+        System.out.println("1.Recursive Permutation\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Merge Sort\n6.Anagram\n7.Prime number(0-1000)\n8.Find your number\n9.Message printer\nSelect the option from above.");
         switch (sc.nextLine()) {
             case "1":
-                new Permutations("ABCD");
+                String[] permutation = Permutations.findPermutations("ABCD");
+                printarr(permutation);
                 break;
             case "2":
                 filepath = "/home/admin1/Desktop/Tamilselvan/Program/Algorithm Programs/src/com/company/test.csv";
                 String[] wordarr = readData(filepath);
                 if (wordarr != null) {
-                    int low = 0, high = wordarr.length, mid;
-                    mid = wordarr.length / 2;
                     System.out.println("Please enter the word to search:");
                     String word = sc.nextLine();
-                    String result = BinarySearch.binarySearchmethod(word, wordarr, low, high, mid);
+                    BinarySearch<String> bs = new BinarySearch<>();
+                    String result = bs.binarySearchmethod(wordarr, word);
                     System.out.println(result);
                 }
                 break;
@@ -50,6 +50,25 @@ public class Main {
                     printarr(words);*/
                 }
                 break;
+            case "6":
+                System.out.println("The strings which you have given is " + AnagramDetection.find("heart", "earth"));
+                break;
+            case "7":
+                int[] prm = PrimeNumbers.find(0, 1000);
+                printarr(prm);
+                printarr(PrimeNumbers.pallindromeint(prm));
+                printarr(PrimeNumbers.anagramint(prm));
+                break;
+            case "8":
+                FindYourNumber.binarySearch(1000);
+                break;
+            case "9":
+                System.out.println(MessagePrinter.replace());
+                break;
+            case "10":
+                int t=12345;
+                String s =String.valueOf(t);
+                System.out.println(s.length());
         }
 
     }
@@ -61,6 +80,7 @@ public class Main {
     public static void printarr(int[] i) {
         System.out.println(Arrays.toString(i));
     }
+
     public static String[] readData(String s) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(s));

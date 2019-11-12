@@ -24,9 +24,10 @@ class JunitTest {
     @Test
     void testdayoftheweek() {
         int[][] date = {{3, 11, 2019}, {4, 11, 2019}, {5, 11, 2019}, {6, 11, 2019}, {10, 11, 2019}};
+        int[][] date1={{3, "a", 2019}, {4.3, 11, "2019"}};
         int[] dayofweek = {0, 1, 2, 3, 0};
         int i = 0;
-        for (int[] dt : date) {
+        for (int[] dt : date1) {
             assertEquals(dayofweek[i], dayOftheWeek(dt[0], dt[1], dt[2]));
             ++i;
         }

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37de3f7e-5a3f-4423-8228-1bf5f336b23c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/AnagramDetection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/FindYourNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/PrimeNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm Programs/out/production/Algorithm Programs/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm Programs/out/production/Algorithm Programs/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/Permutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm Programs/src/com/company/Permutations.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -26,6 +32,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
