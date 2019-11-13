@@ -1,11 +1,5 @@
 package com.company;
 
-//Node class
-class Node<T> {
-    T data = null;
-    Node next = null;
-}
-
 public class UnOrderedList<T> {
     //Declaration and initialization
     private Node head;
@@ -190,20 +184,6 @@ public class UnOrderedList<T> {
             setCount(getCount() - 1);//Decrease the list count
         }
         return val;
-    }
-
-    //To Print the data
-    void printlist() {
-        Node n = head;
-        if (head != null) {
-            while (n.next != null) {
-                System.out.println(n.data);
-                n = n.next;
-            }
-            System.out.println(n.data != null ? n.data : "");
-        } else {
-            System.out.println("List is Empty");
-        }
     }
 
     //Method to increase list count

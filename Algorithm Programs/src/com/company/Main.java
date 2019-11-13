@@ -34,8 +34,9 @@ public class Main {
             case "3":
                 filepath = "/home/admin1/Desktop/Tamilselvan/Program/Algorithm Programs/src/com/company/test.csv";
                 words = readData(filepath);
+                InsertionSort<String> ins=new InsertionSort<>();
                 if (words != null) {
-                    printarr(InsertionSort.sorting(words));
+                    printarr(ins.sorting(words));
                 }
                 break;
             case "4":
