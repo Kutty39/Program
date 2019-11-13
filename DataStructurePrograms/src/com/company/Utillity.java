@@ -23,3 +23,9 @@ public class Utillity {
         return tempstr;
     }
 }
+class PositionException extends Exception {
+    @Override
+    public String getMessage() {
+        return "Given position is exited";
+    }
+}

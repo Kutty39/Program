@@ -6,13 +6,6 @@ class Node<T> {
     Node next = null;
 }
 
-class PositionException extends Exception {
-    @Override
-    public String getMessage() {
-        return "Given position is exited";
-    }
-}
-
 public class UnOrderedList<T> {
     //Declaration and initialization
     private Node head;
