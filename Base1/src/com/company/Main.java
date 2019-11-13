@@ -169,7 +169,7 @@ public class Main {
 
 
     private static void FlipAcoin() {
-        Integer tm, side;
+        Integer tm;
         Double hd, tl;
         String tmp = "";
         while (!(tmp.toUpperCase().equals("Q"))) {
@@ -185,7 +185,6 @@ public class Main {
             if (isint(tmp)) {
                 tm = Integer.parseInt(tmp);
                 Random rnd = new Random();
-                side = rnd.nextInt(1);
                 for (int i = 0; i < tm; i++) {
                     if (rnd.nextFloat() > 0.5) {
                         hd += 1.0;

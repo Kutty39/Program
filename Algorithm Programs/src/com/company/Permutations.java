@@ -11,15 +11,6 @@ public class Permutations {
         k=0;
         return outstr;
     }
-
-   /* private static String swap(String sj, int from) {
-        StringBuilder sb = new StringBuilder(sj);
-        char c = sb.charAt(from);
-        sb.deleteCharAt(from);
-        sb.append(c);
-        return String.valueOf(sb);
-    }*/
-
     private static int lenOfArry(int ln) {
         if (ln == 1) {
             return 1;
