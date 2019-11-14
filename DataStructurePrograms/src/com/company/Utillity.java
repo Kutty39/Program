@@ -1,5 +1,14 @@
 package com.company;
 
+
+/*
+Created by : Mr. Tamilselvan S
+Created on : 13/11/2019
+Purpose of Creating : to serve this package with basic methods or tools.
+ */
+
+
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -50,7 +59,7 @@ class PositionException extends Exception {
 //Node class
 class Node<T> {
     T data = null;
-    Node next = null;
+    Node<T> next = null;
 }
 
 class InsertionSort<T extends Comparable> {

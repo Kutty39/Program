@@ -1,5 +1,13 @@
 package com.company;
 
+/*
+Created by : Mr. Tamilselvan S
+Created on : 13/11/2019
+Purpose of Creating : to using List concept with the ordered linked list.
+ */
+
+
+
 public class OrderedList<T extends Comparable> {
     Node head;
     private int count = 0;

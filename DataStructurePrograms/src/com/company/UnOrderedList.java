@@ -1,8 +1,14 @@
 package com.company;
+/*
+Created by : Mr. Tamilselvan S
+Created on : 13/11/2019
+Purpose of Creating : to using List concept with the linked list.
+ */
 
 public class UnOrderedList<T> {
     //Declaration and initialization
-    private Node head;
+    Node<T> head;
+
     private int count;
 
     //Initializing list
@@ -19,27 +25,29 @@ public class UnOrderedList<T> {
     void add(T item) {
         Node<T> n = new Node<>();
 
-        n.data = item;
-        n.next = null;
-
-        //Checking for tha last Node to add data
-        if (head == null) {//head is null means that, the list has only one Node
+        if (isEmpty()) {
             head = n;
         } else {
-            Node tmp = head;
+            n.data = item;
+            n.next = null;
+
+            //Checking for tha last Node to add data
+            Node<T> tmp = head;
             while (tmp.next != null) {//Looping with all the available Node
                 tmp = tmp.next;
             }
             tmp.next = n;
+
         }
         setCount(getCount() + 1);//increase the list count
     }
 
     //To add the element using position
     void insert(int pos, T item) throws PositionException {
+
         //initializing two temp Node.
-        Node crntn = new Node();
-        Node prvn = new Node();
+        Node<T> crntn;
+        Node<T> prvn;
 
         //get current index of the list
         int indx = getCount();
@@ -52,7 +60,7 @@ public class UnOrderedList<T> {
         int i = 0;//index for looping
 
         //Initializing the Node with given data
-        Node n = new Node();
+        Node<T> n = new Node<>();
         n.data = item;
 
         //initialize the Nodes for the looping
@@ -73,10 +81,11 @@ public class UnOrderedList<T> {
             head = n;
         } else {
             //if it is in between, connect the new Node to previous and next Node
-            prvn.next=n;
-            n.next=crntn;
+            prvn.next = n;
+            n.next = crntn;
         }
-    }
+
+}
 
     //To get size of a list
     int size() {
@@ -90,7 +99,7 @@ public class UnOrderedList<T> {
 
     //this will search an item in a list
     boolean search(T item) {
-        Node tmp = head;
+        Node<T> tmp = head;
         if (tmp.data == item) {
             return true;
         } else {
@@ -106,7 +115,7 @@ public class UnOrderedList<T> {
 
     //To get the index a Data
     int index(T item) {
-        Node tmp = head;
+        Node<T> tmp = head;
         int i = 0;
         do {
             if (tmp.data == item) {
@@ -120,8 +129,8 @@ public class UnOrderedList<T> {
 
     //take the last value out and remove the last Node itself
     T pop() {
-        Node n = head;
-        Node prvn = new Node();
+        Node<T> n = head;
+        Node<T> prvn = null;
         T val = null;
         while (n.next != null) {
             prvn = n;
@@ -130,13 +139,14 @@ public class UnOrderedList<T> {
         prvn.next = null;
         val = (T) n.data;
         setCount(getCount() - 1);
+
         return val;
     }
 
     //Remove the node which have the item data
     void remove(T item) {
-        Node n = head;
-        Node prvn, nextn;
+        Node<T> n = head;
+        Node<T> prvn, nextn;
         prvn = head;
 
         do {//Checking the data is matching with any Node or not
@@ -151,6 +161,7 @@ public class UnOrderedList<T> {
         if (n.data == item) {//unlink/Delete the Node with has item data.
             if (head == prvn) {
                 head = head.next;
+
             } else {
                 prvn.next = nextn;
             }
@@ -163,8 +174,8 @@ public class UnOrderedList<T> {
         int i = 0;//for indexing
 
         //initiating temp Node as head
-        Node tmp = head;
-        Node prvn = null, nextn = null;//to store previous Node and next Node of the matching Node
+        Node<T> tmp = head;
+        Node<T> prvn = null, nextn = null;//to store previous Node and next Node of the matching Node
 
         nextn = tmp.next;//next Node
 
@@ -195,12 +206,12 @@ public class UnOrderedList<T> {
     }
 
     //Method to increase list count
-    private int getCount() {
+    int getCount() {
         return count;
     }
 
     //Method to decrease list count
-    private void setCount(int count) {
+    void setCount(int count) {
         this.count = count;
     }
 
