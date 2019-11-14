@@ -159,31 +159,39 @@ public class UnOrderedList<T> {
     }
 
     //Remove the node which have the item data
-    T pop(T item) {
-        Node n = head;
-        Node prvn, nextn;
-        T val = null;
-        prvn = head;
+    T pop(int pos) {
+        int i = 0;//for indexing
 
-        do {//Checking the data is matching with any Node or not
-            nextn = n.next;
-            if (n.data == item) {
-                break;
-            }
-            prvn = n;
-            n = n.next;
-        } while (n.next != null);
+        //initiating temp Node as head
+        Node tmp = head;
+        Node prvn = null, nextn = null;//to store previous Node and next Node of the matching Node
 
-        if (n.data == item) {//unlink/Delete the Node with has item data.
-            val = (T) n.data;
-            if (head == prvn) {
-                head = head.next;
+        nextn = tmp.next;//next Node
+
+        //looping until the last Node.next
+        do {
+            if (i < getCount()) {
+                if (i == pos) {
+                    break;
+                }
+                prvn = tmp;//current Node is previous Node
+                tmp = nextn;//next Node is current node
+                nextn = tmp.next;
+                ++i;
             } else {
-                prvn.next = nextn;
+                return null;
             }
-            setCount(getCount() - 1);//Decrease the list count
+        } while (tmp != null);
+
+
+        //Check whether the first Node is last Node
+        if (prvn != null) {
+            prvn.next = nextn;
+        } else {
+            head = nextn;
         }
-        return val;
+        setCount(getCount() - 1);//decreasing list count
+        return (T) tmp.data;
     }
 
     //Method to increase list count
