@@ -24,12 +24,12 @@ public class UnOrderedList<T> {
     //Adding data to list
     void add(T item) {
         Node<T> n = new Node<>();
+        n.data = item;
+        n.next = null;
 
         if (isEmpty()) {
             head = n;
         } else {
-            n.data = item;
-            n.next = null;
 
             //Checking for tha last Node to add data
             Node<T> tmp = head;
