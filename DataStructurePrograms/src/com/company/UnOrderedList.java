@@ -5,7 +5,9 @@ Created on : 13/11/2019
 Purpose of Creating : to using List concept with the linked list.
  */
 
-public class UnOrderedList<T> {
+import javax.swing.undo.UndoableEdit;
+
+public class UnOrderedList<T /*extends Comparable*/> {
     //Declaration and initialization
     Node<T> head;
 
@@ -85,7 +87,7 @@ public class UnOrderedList<T> {
             n.next = crntn;
         }
 
-}
+    }
 
     //To get size of a list
     int size() {
@@ -225,4 +227,34 @@ public class UnOrderedList<T> {
             return (T) "Not Found and Added";
         }
     }
+
+    /*void sort() {
+        Node<T> prev = null, next = null;
+        Node<T> current = head;
+
+        next = current.next;
+        //prev = current;
+        while (next != null) {
+            if (current.data.compareTo(next.data) >0) {
+                if (prev != null) {
+                    prev.next = next;
+                    current.next = next.next;
+                    next.next = current;
+                } else {
+                    current.next = next.next;
+                    next.next = current;
+                    head=next;
+                }
+                prev = null;
+                current = head;
+                next = current.next;
+
+            } else {
+                prev = current;
+                current = next;
+                next = current.next;
+            }
+
+        }
+    }*/
 }
