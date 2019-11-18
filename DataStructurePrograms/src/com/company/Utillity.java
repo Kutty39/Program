@@ -9,6 +9,11 @@ Purpose of Creating : to serve this package with basic methods or tools.
 
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.WeekFields;
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Utillity {
@@ -276,4 +281,72 @@ Purpose of Creating : Created to demonstrate Double linked list
         return data;
     }
 
+}
+
+class Permutations {
+    static int k = 0;
+    //static String tmp = "";
+    private static String[] outstr;
+
+    public static String[] findPermutations(String s) {
+        outstr = new String[lenOfArry(s.length())];
+        recursion(s, 0);
+        k=0;
+        Arrays.sort(outstr);
+        return outstr;
+    }
+    private static int lenOfArry(int ln) {
+        if (ln == 1) {
+            return 1;
+        } else {
+            return ln * lenOfArry(ln - 1);
+        }
+    }
+
+    private static void recursion(String s, int from) {
+        if (from == s.length()) {
+            outstr[k] = s;
+            ++k;
+        } else {
+            for (int i = from; i < s.length(); i++) {
+                char[] ch = s.toCharArray();
+                char tmp = ch[from];
+                ch[from] = ch[i];
+                ch[i] = tmp;
+                recursion(String.valueOf(ch), from + 1);
+            }
+        }
+    }
+
+}
+
+
+class DateTime {
+    /*
+  Created by : Mr. Tamilselvan S
+  Created on : 18/11/2019
+  Purpose of Creating : to work with date and time.
+   */
+    LocalDate date;
+
+    static LocalDate getDate(int date, int month, int year) {
+        //to convert the date from individual date, month and year
+        return LocalDate.of(year, month, date);
+    }
+
+    static LocalDate getMonthEnd(LocalDate date) {
+        //It will return month end
+        return date.with(TemporalAdjusters.lastDayOfMonth());
+    }
+
+    static int getDayNum(LocalDate date) {
+        //Day number, if it is Sunday it will give you 7.
+        return date.getDayOfWeek().getValue();
+    }
+
+    static int getWeeKNum(LocalDate date) {
+        //week number based on month
+        WeekFields wf = WeekFields.of(Locale.getDefault());
+        return date.get(wf.weekOfMonth());
+    }
 }

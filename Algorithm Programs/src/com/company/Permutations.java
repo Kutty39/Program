@@ -1,5 +1,8 @@
 package com.company;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Permutations {
     static int k = 0;
     //static String tmp = "";
@@ -9,6 +12,7 @@ public class Permutations {
         outstr = new String[lenOfArry(s.length())];
         recursion(s, 0);
         k=0;
+        Arrays.sort(outstr);
         return outstr;
     }
     private static int lenOfArry(int ln) {

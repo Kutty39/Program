@@ -48,6 +48,7 @@ public class PrimeNumbers {
             flagpermu = false;
             if (sb.length() > 1) {
                 String[] permu = Permutations.findPermutations(sb.toString());
+                Arrays.sort(permu);
                 for (String s : permu) {
                     for (int val : i) {
                         if (val != item) {
