@@ -54,12 +54,8 @@ public class HashingFunction {
     int search(int value) {
         for (int i : map.keySet()) {
             if (map.get(i) != null) {
-                Node head = map.get(i).head;
-                while (head != null) {
-                    if ((int)head.data == value) {
-                        return i;
-                    }
-                    head = head.next;
+                if (map.get(i).search(value)) {
+                    return i;
                 }
             }
         }
