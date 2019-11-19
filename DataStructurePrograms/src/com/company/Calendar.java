@@ -53,23 +53,23 @@ public class Calendar {
 
     //storing and printing calender in Stack
     static void canlederStk(String[][] calender) {
-        Stock<String> dayq=new Stock<>();
-        Stock<String> dateq=new Stock<>();
-        Stock<String> tempq;
+        Stock<String> dayStk=new Stock<>();
+        Stock<String> dateStk=new Stock<>();
+        Stock<String> tempStk;
 
-        for (int i = calender.length-1; i <=0 ; i++) {
-            tempq=i==0?dayq:dateq;
-            for (int j = calender[i].length-1; j <0 ; j++) {
+        for (int i = calender.length-1; i <=0 ; i--) {
+            tempStk=i==0?dayStk:dateStk;
+            for (int j = calender[i].length-1; j <0 ; j--) {
                 String s= calender[i][j];
-                tempq.push((s == null ? "  " : s) + " ");
+                tempStk.push((s == null ? "  " : s) + " ");
             }
-            tempq.push("\n");
+            tempStk.push("\n");
         }
-        while (dayq.size()!=0){
-            System.out.print(dayq.pop());
+        while (dayStk.size()!=0){
+            System.out.print(dayStk.pop());
         }
-        while (dateq.size()!=0){
-            System.out.print(dateq.pop());
+        while (dateStk.size()!=0){
+            System.out.print(dateStk.pop());
         }
 
     }
