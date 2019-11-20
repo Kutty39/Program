@@ -1,2 +1,34 @@
-{"Rice":{"priceperkg":[],"weight":[],"Name":[]}}
-{"Rice":[{"priceperkg":"","weight":"","Name": ""},{"priceperkg":"","weight":"","Name": ""},{"priceperkg":"","weight":"","Name": ""}]}
+{
+  "Inv": {
+    "Wheat": {
+      "Price Per kg": [
+        10.0
+      ],
+      "Weight": [
+        10.0
+      ],
+      "Name": [
+        "sdfkhsdkf"
+      ]
+    },
+    "Pulses": {
+      "Price Per kg": [],
+      "Weight": [],
+      "Name": []
+    },
+    "Rice": {
+      "Price Per kg": [
+        10.0,
+        1.0
+      ],
+      "Weight": [
+        10.0,
+        10.0
+      ],
+      "Name": [
+        "fsdf",
+        "sfgsdfjkgsdka"
+      ]
+    }
+  }
+}
