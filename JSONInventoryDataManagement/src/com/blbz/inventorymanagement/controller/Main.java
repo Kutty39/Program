@@ -103,6 +103,7 @@ public class Main {
                 name = Utility.getString();
             }
             System.out.println("Enter weight of the " + item);
+
             int weight = Utility.getInt();
             System.out.println("Enter price per kg");
             Double priceperkg = Utility.getDouble();
