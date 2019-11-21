@@ -2,32 +2,35 @@
   "Inv": {
     "Wheat": {
       "Price Per kg": [
-        10.0
+        25.0
       ],
       "Weight": [
-        10.0
+        5.0
       ],
       "Name": [
-        "sdfkhsdkf"
+        "ashirvad"
       ]
     },
     "Pulses": {
-      "Price Per kg": [],
-      "Weight": [],
-      "Name": []
-    },
-    "Rice": {
       "Price Per kg": [
-        10.0,
-        1.0
+        60.0
       ],
       "Weight": [
-        10.0,
         10.0
       ],
       "Name": [
-        "fsdf",
-        "sfgsdfjkgsdka"
+        "rajma"
+      ]
+    },
+    "Rice": {
+      "Price Per kg": [
+        60.0
+      ],
+      "Weight": [
+        50.0
+      ],
+      "Name": [
+        "svs"
       ]
     }
   }

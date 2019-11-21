@@ -12,6 +12,8 @@ import com.blbz.inventorymanagement.service.InventoryManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.util.Iterator;
+
 public class InventorySystem implements InventoryManager {
     JsonFileHandler jfh = new JsonFileHandler();//this will use for all the file operations
 
@@ -23,8 +25,8 @@ public class InventorySystem implements InventoryManager {
      */
     @Override
     public void addItem(String item, String itemname, double weight, double priceperkg) {
+        jfh.createJsonIfnotFound();
         jfh.objectCreator();//this method will create the base object for the JSON.
-
         JSONObject mainObject = Inventory.getInv();//getting the base object through getter and storing
         JSONObject jsonObject = (JSONObject) mainObject.get("Inv");//getting the first object form base object
 
@@ -38,22 +40,63 @@ public class InventorySystem implements InventoryManager {
         jsonArray = (JSONArray) jsonItem.get("Price Per kg");
         jsonArray.add(priceperkg);
 
+        //Inventory.setInv(mainObject);
         jfh.saveJson();//to save the json
     }
 
     @Override
-    public void calculate(String option) {
+    public double calculate(String option) {
+        double total = 0;
+        JSONObject tmpobj;
+        jfh.objectCreator();
         JSONObject base = (JSONObject) Inventory.getInv().get("Inv");
-        if (option == "All") {
-            for (String json : base.keySet()) {
+        if (!option.equals("All")) {
+            base = (JSONObject) base.get(option);
+            total = total + totalprice(option, base);
+        } else {
+            for (Object obj : base.keySet()) {
+                tmpobj = (JSONObject) base.get(obj);
+                total = total + totalprice((String) obj, tmpobj);
+            }
+        }
+        System.out.println("Overall - " + total);
+        return total;
+    }
+
+    @Override
+    public String search(String item, String itemname) {
+        JSONObject base = (JSONObject) Inventory.getInv().get("Inv");
+        JSONObject tmpobj;
+        JSONArray name,weight,perkgprice;
+        int pos=0;
+        
+        for (Object obj : base.keySet()) {
+            if(obj.equals(item)) {
+                tmpobj = (JSONObject) base.get(obj);
+                name=(JSONArray) tmpobj.get("name");
+                weight=(JSONArray) tmpobj.get("weight");
+                perkgprice=(JSONArray) tmpobj.get("Price Per kg");
 
             }
         }
-        JSONObject calcobj = (JSONObject) base.get(option);
-        if (option.equals("All")) {
+        
+        return "";
+    }
 
-        } else {
+    private double totalprice(String itemname, JSONObject obj) {
+        JSONArray tmparray, tmparray1;
+        int pos = 0;
+        double objtotal = 0;
+        tmparray = (JSONArray) obj.get("Weight");
+        tmparray1 = (JSONArray) obj.get("Price Per kg");
+        Iterator it = tmparray.iterator();
+        while (it.hasNext()) {
+            objtotal = objtotal + (double) it.next() * (double) tmparray1.get(pos);
+            ++pos;
         }
+        pos = 0;
+        System.out.println(itemname + " - " + objtotal);
+        return objtotal;
     }
 
 }

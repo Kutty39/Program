@@ -14,20 +14,16 @@ public class Inventory {
     private static JSONObject inv = new JSONObject();//this is for storing base object
     private static File fl;//to get the file
     private static FileReader fr;//to read the file
-    private static FileWriter fw;//file writer to write data in the files
+    private static boolean continueflag;
 
     public static File getFl() {
+        Inventory.fl = new File("fils/InventeryJSON.json");
         return fl;
     }//get the files
 
     public static void setFl(String path) {
         Inventory.fl = new File(path);
     }//set the file values
-
-    public static FileWriter getFw() throws IOException {//will return the  file writer
-        fw = new FileWriter(getFl());
-        return fw;
-    }
 
     public static FileReader getFr() throws FileNotFoundException {//get the file reader
         fr = new FileReader(getFl());
@@ -41,5 +37,13 @@ public class Inventory {
 
     public static void setInv(JSONObject inv) {// assign the value to base json object
         Inventory.inv = inv;
+    }
+
+    public static boolean isContinueflag() {
+        return continueflag;
+    }
+
+    public static void setContinueflag(boolean continueflag) {
+        Inventory.continueflag = continueflag;
     }
 }

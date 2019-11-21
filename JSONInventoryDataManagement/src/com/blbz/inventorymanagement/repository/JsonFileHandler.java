@@ -10,6 +10,8 @@ import java.io.IOException;
 
 
 public class JsonFileHandler {
+
+
     // Inventory inventory=new Inventory();
     public static void main(String[] args) {
         //getJsonObject();
@@ -17,7 +19,6 @@ public class JsonFileHandler {
 
     public void objectCreator() {
         try {
-            createJsonIfnotFound();
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = ((JSONObject) jsonParser.parse(Inventory.getFr()));
             Inventory.setInv(jsonObject);
@@ -30,19 +31,18 @@ public class JsonFileHandler {
     This method will create the file if it is not available with default string
      */
     public void createJsonIfnotFound() {
+
         try {
-            Inventory.setFl("fils/InventeryJSON.json");
             if (Inventory.getFl().createNewFile()) {
-                try (FileWriter fileWriter = new FileWriter(Inventory.getFl())) {
-                    fileWriter.write("{\n" +
-                            "  \"Inv\":{\n" +
-                            "  \"Rice\" :{\"Name\":[],\"Weight\":[],\"Price Per kg\":[]},\n" +
-                            "  \"wheat\":{\"Name\":[],\"Weight\":[],\"Price Per kg\":[]},\n" +
-                            "  \"Pulses\":{\"Name\":[],\"Weight\":[],\"Price Per kg\":[]}\n" +
-                            "}\n" +
-                            "}");
-                    fileWriter.flush();
-                }
+                FileWriter fw=new FileWriter(Inventory.getFl());
+                fw.write("{\n" +
+                        "  \"Inv\":{\n" +
+                        "  \"Rice\" :{\"Name\":[],\"Weight\":[],\"Price Per kg\":[]},\n" +
+                        "  \"Wheat\":{\"Name\":[],\"Weight\":[],\"Price Per kg\":[]},\n" +
+                        "  \"Pulses\":{\"Name\":[],\"Weight\":[],\"Price Per kg\":[]}\n" +
+                        "}\n" +
+                        "}");
+                fw.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,8 +53,13 @@ public class JsonFileHandler {
     This method will save the Json file
      */
     public void saveJson() {
-        try {
-            Inventory.getFw().write(Inventory.getInv().toString());
+        try (FileWriter fw=new FileWriter(Inventory.getFl());){
+            //System.out.println(Inventory.getInv().toJSONString());
+            /*FileWriter fr = Inventory.getFw();
+            fr.write(Inventory.getInv().toString());
+            fr.flush();*/
+            fw.write(Inventory.getInv().toJSONString());
+            fw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
