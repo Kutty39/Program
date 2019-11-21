@@ -63,26 +63,6 @@ public class InventorySystem implements InventoryManager {
         return total;
     }
 
-    @Override
-    public String search(String item, String itemname) {
-        JSONObject base = (JSONObject) Inventory.getInv().get("Inv");
-        JSONObject tmpobj;
-        JSONArray name,weight,perkgprice;
-        int pos=0;
-        
-        for (Object obj : base.keySet()) {
-            if(obj.equals(item)) {
-                tmpobj = (JSONObject) base.get(obj);
-                name=(JSONArray) tmpobj.get("name");
-                weight=(JSONArray) tmpobj.get("weight");
-                perkgprice=(JSONArray) tmpobj.get("Price Per kg");
-
-            }
-        }
-        
-        return "";
-    }
-
     private double totalprice(String itemname, JSONObject obj) {
         JSONArray tmparray, tmparray1;
         int pos = 0;

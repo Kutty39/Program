@@ -10,5 +10,4 @@ public interface InventoryManager {
     //Need this methode to add value in json
     void addItem(String item, String itemname, double weight, double priceperkg);
     double calculate(String item);
-    String search(String item,String itemname);
 }
