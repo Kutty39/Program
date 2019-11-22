@@ -51,6 +51,7 @@ public class Main {
                                 break;
                             default:
                                 System.out.println("Wrong option!!!");
+                                break;
                         }
                     }
                     Inventory.setContinueflag(true);
@@ -79,7 +80,9 @@ public class Main {
                                 Inventory.setContinueflag(false);
                                 break;
                             default:
+
                                 System.out.println("Wrong input!!");
+                                break;
                         }
                     }
                     Inventory.setContinueflag(true);
@@ -112,6 +115,7 @@ public class Main {
             //it will call the add method by which JSON file will get updated
             invsys.addItem(item, name, weight, priceperkg);
         } catch (InputMismatchException e) {
+            System.out.print("\033[H\033[2J");
             System.out.println("Wrong input given");
         }
     }

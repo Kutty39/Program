@@ -20,7 +20,7 @@ public class Utility {
             sc.reset();
             inputstring = sc.nextLine();
             if (!address) {
-                if (!Pattern.matches("\\D*", inputstring)) {
+                if (!Pattern.matches("\\D*[^\\s]", inputstring)) {
                     System.out.println("Please enter valid string");
                     inputstring = "";
                 }
@@ -35,25 +35,24 @@ public class Utility {
         while (continueflag) {
             try {
                 sc.reset();
-                sc.nextLine();
-                val = sc.nextInt();
+                val = Integer.parseInt(sc.nextLine());
                 if (field.equals("Zip")) {
-                    if (Pattern.matches("[\\d]{6}",String.valueOf(val) )) {
+                    if (Pattern.matches("[0-9]{6}", String.valueOf(val))) {
                         continueflag = false;
-                    }else{
-                        System.out.println("Invalid input");
+                    } else {
+                        System.out.println("Please enter valid zip");
                     }
                 } else if (field.equals("Ph")) {
-                    if (Pattern.matches("[\\d]{10}",String.valueOf(val))) {
+                    if (Pattern.matches("[0-9]{10}", String.valueOf(val))) {
                         continueflag = false;
-                    }else{
-                        System.out.println("Invalid input");
+                    } else {
+                        System.out.println("Please enter valid phone number");
                     }
                 } else {
                     continueflag = false;
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input");
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input! enter again");
                 continueflag = true;
             }
         }

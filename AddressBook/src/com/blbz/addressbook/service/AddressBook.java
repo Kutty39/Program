@@ -1,4 +1,6 @@
 package com.blbz.addressbook.service;
 
-public class AddressBook {
+public interface AddressBook {
+    public void addPerson(String key,String detail);
+    public void savePerson();
 }
