@@ -21,13 +21,14 @@ public class Main {
     public static void main(String[] args) {
         String option="";
         Inventory.setContinueflag(true);
+        //This loop will run till you get the valid input, Like this loop i have used more while for getting valid inputs
         while (Inventory.isContinueflag()) {
             option="";
             System.out.println("Please select what action you want to perform?\n1.Add data\n2.Do calculation\n3.Exit");
             while (option.equals("")){
                 option=Utility.getString();
             }
-            switch (option) {
+            switch (option) {//This switch for main menu
                 case "1":
                     while (Inventory.isContinueflag()) {
                         option="";
@@ -35,7 +36,7 @@ public class Main {
                         while (option.equals("")){
                             option=Utility.getString();
                         }
-                        switch (option) {//it will pass the item to next level input
+                        switch (option) {//Adding the value to Json, it will pass the item to next level input
                             case "1":
                                 secondLevelInputs("Rice");
                                 break;
@@ -55,13 +56,13 @@ public class Main {
                     Inventory.setContinueflag(true);
                     break;
                 case "2":
-                    while (Inventory.isContinueflag()) {
+                    while (Inventory.isContinueflag()) {//This switch for calculation
                         option="";
                         System.out.println("Please select from the below option:\n\n1.All inventory\n2.Rice\n3.Wheat\n4.Pulses\n5.Exit");
                         while (option.equals("")){
                             option=Utility.getString();
                         }
-                        switch (option) {
+                        switch (option) {//this will call the calculate method with appropriate value
                             case "1":
                                 System.out.println(invsys.calculate("All"));
                                 break;

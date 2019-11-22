@@ -1,5 +1,11 @@
 package com.blbz.inventorymanagement.repository;
 
+/*
+Created by : Mr. Tamilselvan S
+Created on : 20/11/2019
+Purpose of Creating : This is to perform all file level operations
+ */
+
 
 import com.blbz.inventorymanagement.model.Inventory;
 import org.json.simple.JSONObject;
@@ -17,6 +23,7 @@ public class JsonFileHandler {
         //getJsonObject();
     }
 
+    // this will read the base JSON file and store it into one object
     public void objectCreator() {
         try {
             JSONParser jsonParser = new JSONParser();
@@ -54,10 +61,6 @@ public class JsonFileHandler {
      */
     public void saveJson() {
         try (FileWriter fw=new FileWriter(Inventory.getFl());){
-            //System.out.println(Inventory.getInv().toJSONString());
-            /*FileWriter fr = Inventory.getFw();
-            fr.write(Inventory.getInv().toString());
-            fr.flush();*/
             fw.write(Inventory.getInv().toJSONString());
             fw.flush();
         } catch (IOException e) {

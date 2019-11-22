@@ -18,7 +18,7 @@ public class InventorySystem implements InventoryManager {
     JsonFileHandler jfh = new JsonFileHandler();//this will use for all the file operations
 
     /*
-    By implementing the methode we are adding datas into JSON file.
+    By implementing the method we are adding data's into JSON file.
     in this we need name of the item
     weight of the item
     price per kg
@@ -44,6 +44,11 @@ public class InventorySystem implements InventoryManager {
         jfh.saveJson();//to save the json
     }
 
+    /*
+    this will do the calculation for total
+    if the option is all, it will loop through all the object and do calculation
+    if you gave the option specifically like "Rice"etc. then it will directly went into the array and do the calculation
+     */
     @Override
     public double calculate(String option) {
         double total = 0;
@@ -63,18 +68,20 @@ public class InventorySystem implements InventoryManager {
         return total;
     }
 
+    //This is the method to calculate total price
     private double totalprice(String itemname, JSONObject obj) {
         JSONArray tmparray, tmparray1;
         int pos = 0;
         double objtotal = 0;
+
         tmparray = (JSONArray) obj.get("Weight");
         tmparray1 = (JSONArray) obj.get("Price Per kg");
         Iterator it = tmparray.iterator();
-        while (it.hasNext()) {
+        while (it.hasNext()) {//looping through all the values in the array
             objtotal = objtotal + (double) it.next() * (double) tmparray1.get(pos);
             ++pos;
         }
-        pos = 0;
+
         System.out.println(itemname + " - " + objtotal);
         return objtotal;
     }

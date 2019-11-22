@@ -14,7 +14,7 @@ public class Inventory {
     private static JSONObject inv = new JSONObject();//this is for storing base object
     private static File fl;//to get the file
     private static FileReader fr;//to read the file
-    private static boolean continueflag;
+    private static boolean continueflag;//this is to check the continuation of the loops in main menu.
 
     public static File getFl() {
         Inventory.fl = new File("fils/InventeryJSON.json");

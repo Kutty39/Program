@@ -9,5 +9,5 @@ Purpose of Creating : Interface for the application which will have all the meth
 public interface InventoryManager {
     //Need this methode to add value in json
     void addItem(String item, String itemname, double weight, double priceperkg);
-    double calculate(String item);
+    double calculate(String item);// this method is for calculating
 }
