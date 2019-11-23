@@ -5,22 +5,36 @@ Created on : 21/11/2019
 Purpose of Creating : This class will have all the common purpose methods and variables
  */
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Utility {
-    static Scanner sc = new Scanner(System.in);
-    static String inputstring = "";
-    static boolean continueflag = false;
+    private static Scanner sc = new Scanner(System.in);
 
-    public static String getString(boolean address) {//reading string input
-        inputstring = "";
+    public static String getString(boolean address, String... field) {//reading string input
+        String inputstring = "";
         while (inputstring.equals("")) {
             sc.reset();
-            inputstring = sc.nextLine();
+            inputstring = sc.nextLine().trim();
             if (!address) {
-                if (!Pattern.matches("\\D*[^\\s]", inputstring)) {
+                if (field.length > 0) {
+                    if (field[0].equals("Zip")) {
+                        if (!Pattern.matches("\\d{6}", inputstring)) {
+                            System.out.println("Please enter valid zip");
+                            inputstring = "";
+                        }
+                    } else if (field[0].equals("Ph")) {
+                        if (!Pattern.matches("\\d{10}", inputstring)) {
+                            System.out.println("Please enter valid phone number");
+                            inputstring = "";
+                        }
+                    }else if (field[0].equals("search")) {
+                        if (!Pattern.matches("\\D*", inputstring)) {
+                            System.out.println("Please enter valid name");
+                            inputstring = "";
+                        }
+                    }
+                } else if (!Pattern.matches("[a-zA-z]*[\\s]?[a-zA-z]*", inputstring)) {
                     System.out.println("Please enter valid string");
                     inputstring = "";
                 }
@@ -29,28 +43,14 @@ public class Utility {
         return inputstring;
     }
 
-    public static int getInt(String field) {//reading int input
-        continueflag = true;
+    public static int getInt() {//reading int input
+        boolean continueflag = true;
         int val = 0;
         while (continueflag) {
             try {
                 sc.reset();
-                val = Integer.parseInt(sc.nextLine());
-                if (field.equals("Zip")) {
-                    if (Pattern.matches("[0-9]{6}", String.valueOf(val))) {
-                        continueflag = false;
-                    } else {
-                        System.out.println("Please enter valid zip");
-                    }
-                } else if (field.equals("Ph")) {
-                    if (Pattern.matches("[0-9]{10}", String.valueOf(val))) {
-                        continueflag = false;
-                    } else {
-                        System.out.println("Please enter valid phone number");
-                    }
-                } else {
-                    continueflag = false;
-                }
+                val = Integer.parseInt(sc.nextLine().trim());
+                continueflag = false;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! enter again");
                 continueflag = true;
@@ -59,9 +59,5 @@ public class Utility {
         return val;
     }
 
-    public static double getDouble() throws InputMismatchException {//reading double input
-        sc.reset();
-        return sc.nextDouble();
-    }
 
 }
