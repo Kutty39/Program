@@ -1,17 +1,22 @@
 package com.blbz.addressbook.repository;
 
+/*
+Created by : Tamilselvan S.
+Created on : 22/11/2019.
+Purpose : all the file operation is here.
+ */
+
 import com.blbz.addressbook.Util.Utility;
 import com.blbz.addressbook.model.AddressBookModel;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import javax.swing.text.html.parser.Parser;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -20,9 +25,9 @@ public class AddressBookFileHandaling {
     public static void writeJSON(JSONObject jsonObject) {
         if (AddressBookModel.getFilename().contains("Untitled")) {
             System.out.println("Please enter the files name to save:");
-            String filename=Utility.getString(false);
-            if(!filename.contains("*.json")){
-                filename=filename+".json";
+            String filename = Utility.getString(false);
+            if (!filename.contains("*.json")) {
+                filename = filename + ".json";
             }
             AddressBookModel.setFilename(filename);
         }
@@ -37,11 +42,11 @@ public class AddressBookFileHandaling {
 
     }
 
-    public static void deleteJSOn(){
-        File fl=new File(AddressBookModel.getFilename());
-        if(fl.delete()){
+    public static void deleteJSOn() {
+        File fl = new File(AddressBookModel.getFilename());
+        if (fl.delete()) {
             System.out.println("Successfully deleted");
-        }else {
+        } else {
             System.out.println("Something went wrong!!!!");
         }
     }
