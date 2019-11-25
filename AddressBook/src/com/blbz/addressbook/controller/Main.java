@@ -12,6 +12,7 @@ import com.blbz.addressbook.repository.AddressBookFileHandaling;
 import com.blbz.addressbook.service.AddressBook;
 import com.blbz.addressbook.serviceimpl.AddressBookImp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -108,26 +109,44 @@ public class Main extends AddressBookModel {
 
     private static void fileSelectionDelete(String function) {
         List<String> filename = AddressBookFileHandaling.fileName();
-        int pos = 0;
+        List<String> deletename = new ArrayList<>();
+        int val = 0;
+        int pos = 0, pos1 = 0;
         if (filename.size() != 0) {
             System.out.println("Address book Selection Screen.");
             System.out.println("Please select the file you want to " + (function.equals("find") ? "work" : "delete"));
             for (String path : filename) {
                 ++pos;
-                System.out.println(pos + "." + (path.contains("Untitled") ? "New Book" : path));
+                if (function.equals("find")) {
+                    System.out.println(pos + "." + (path.contains("Untitled") ? "New Book" : path));
+                } else {
+                    if (!path.contains("Untitled")) {
+                        deletename.add(path);
+                        ++pos1;
+                        System.out.println(pos1 + "." + path);
+                    }
+                }
             }
-            int val = Utility.getInt();
-            while (val > pos) {
-                System.out.println("Enter valid file number");
-                val = Utility.getInt();
-            }
-            if (function.equals("find")) {
-
-                AddressBookModel.setFilename(filename.get(val - 1));
-
-                System.out.println("File changed to " + filename.get(val - 1));
+            if (!function.equals("find")) {
+                if (pos1 != 0) {
+                    val = Utility.getInt();
+                    while (val > pos1) {
+                        System.out.println("Enter valid file number");
+                        val = Utility.getInt();
+                    }
+                    AddressBookModel.setFilename(deletename.get(val - 1));
+                    AddressBookFileHandaling.deleteJSOn();
+                }else{
+                    System.out.println("There is not file to delete");
+                }
             } else {
-                AddressBookFileHandaling.deleteJSOn();
+                val = Utility.getInt();
+                while (val > pos) {
+                    System.out.println("Enter valid file number");
+                    val = Utility.getInt();
+                }
+                AddressBookModel.setFilename(filename.get(val - 1));
+                System.out.println("File changed to " + filename.get(val - 1));
             }
         } else {
             if (function.equals("find")) {
