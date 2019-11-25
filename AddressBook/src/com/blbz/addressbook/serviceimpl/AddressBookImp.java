@@ -9,9 +9,12 @@ import org.json.simple.JSONObject;
 import java.util.HashMap;
 
 public class AddressBookImp implements AddressBook {
-    public AddressBookImp(){
+    //Read the json and store the old value into person object
+    public AddressBookImp() {
         AddressBookModel.setPersion(AddressBookFileHandaling.readJson());
     }
+
+    //to add person detail into person object
     @Override
     public void addPerson(String key, String detail) {
 
@@ -25,9 +28,10 @@ public class AddressBookImp implements AddressBook {
         AddressBookModel.setPersion(old);
     }
 
+    //it will save person object into json
     @Override
     public void savePerson() {
-        JSONObject jobj= (JSONObject) AddressBookModel.getPersion();
+        JSONObject jobj = (JSONObject) AddressBookModel.getPersion();
         jobj.putAll(AddressBookModel.getPersion());
         AddressBookFileHandaling.writeJSON(jobj);
 
@@ -36,7 +40,7 @@ public class AddressBookImp implements AddressBook {
     @Override
     public void saveasPerson() {
 
-        JSONObject jobj= (JSONObject) AddressBookModel.getPersion();
+        JSONObject jobj = (JSONObject) AddressBookModel.getPersion();
         AddressBookModel.setFilename("Untitled");
         AddressBookFileHandaling.writeJSON(jobj);
     }
@@ -47,15 +51,17 @@ public class AddressBookImp implements AddressBook {
         if (jobj.get(fullname) != null) {
             JSONObject foundedobj = (JSONObject) jobj.get(fullname);
             foundedobj.forEach((k, v) -> {
-                System.out.println(k + " " + v);
-                System.out.println("want to change the value, press 'y'. any key to move next");
-                if (Utility.getString(false).toUpperCase().equals("Y")) {
-                    System.out.println("Enter new " + k);
-                    foundedobj.put(k, Utility.getString((k == "Address"), (k.equals("Phone") ? "Ph" : (k.equals("Zip") ? "Zip" : "search"))));
+                if (!k.equals("First Name") && !k.equals("Last Name")) {
+                    System.out.println(k + " " + v);
+                    System.out.println("want to change the value, press 'y'. any key to move next");
+                    if (Utility.getString(false).toUpperCase().equals("Y")) {
+                        System.out.println("Enter new " + k);
+                        foundedobj.put(k, Utility.getString((k == "Address"), (k.equals("Phone") ? "Ph" : (k.equals("Zip") ? "Zip" : "search"))));
+                    }
                 }
             });
             AddressBookModel.setPersion(jobj);
-        }else{
+        } else {
             System.out.println("Name is not found");
         }
     }

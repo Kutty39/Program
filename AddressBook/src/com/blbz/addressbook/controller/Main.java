@@ -22,17 +22,17 @@ public class Main extends AddressBookModel {
     public static void main(String[] args) {
         setContinueflag(true);
         while (isContinueflag()) {
+            //address book manager
             System.out.println("Address Book Manager(ABM)");
             System.out.println("1.Create/Open address book\n2.Delete address book\n3.Exit");
             switch (Utility.getInt()) {
                 case 1:
-                    fileSelectionDelete("find");
-                    personOperation();
+                    fileSelectionDelete("find");//will show file menu to select/create
+                    personOperation();//person detail menu
                     setContinueflag(true);
                     break;
                 case 2:
-                    fileSelectionDelete("delete");
-                    setContinueflag(true);
+                    fileSelectionDelete("delete");//will show file menu to delete
                     break;
                 case 3:
                     System.out.println("Bye! Bye!!");
@@ -47,6 +47,7 @@ public class Main extends AddressBookModel {
 
     }
 
+    //persondetail menu
     private static void personOperation() {
         setContinueflag(true);
         addressBook = new AddressBookImp();
@@ -64,24 +65,24 @@ public class Main extends AddressBookModel {
                 case 1:
                     personAddMenu();//function to add person detail
                     break;
-                case 2:
+                case 2://edit option
                     do {
                         System.out.println("Enter the users first name with last name to edit.\n(eg. firstname lastename)");
-                        addressBook.editPerson(Utility.getString(false, "search"));
+                        addressBook.editPerson(Utility.getString(false, "search"));//method to do edit
                         System.out.println("Press 'e' to edit another person or Press any key to close");
                     } while (Utility.getString(false).toUpperCase().equals("E"));
                     break;
-                case 3:
+                case 3://delete option
                     do {
                         System.out.println("Enter the users first name with last name to delete.\n(eg. firstname lastename)");
-                        addressBook.removePerson(Utility.getString(false, "search"));
+                        addressBook.removePerson(Utility.getString(false, "search"));//method to delete.
                         System.out.println("Press 'd' to edit another person or Press any key to close");
                     } while (Utility.getString(false).toUpperCase().equals("D"));
                     break;
-                case 4:
+                case 4://search option
                     do {
                         System.out.println("Please enter the name to search");
-                        addressBook.searchPerson(Utility.getString(false, "search"));
+                        addressBook.searchPerson(Utility.getString(false, "search"));//method to search
                         System.out.println("Press 'y' to perform another search. any key to exit.");
                     } while (Utility.getString(false).toUpperCase().equals("Y"));
                     break;
@@ -89,9 +90,10 @@ public class Main extends AddressBookModel {
                     addressBook.savePerson();//will save the changes what you made
                     break;
                 case 6:
-                    addressBook.saveasPerson();
+                    addressBook.saveasPerson();//will save the changes into another file
                     break;
-                case 7:
+                case 7://exit
+                    //condition to check whether you have any unsaved data or not
                     if (AddressBookModel.getPersion().size() > 0) {
                         System.out.println("You have unsaved data. press 'y' to save. any key to close.");
                         if (Utility.getString(false).toUpperCase().equals("Y")) {
