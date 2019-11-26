@@ -47,7 +47,7 @@ public class Main extends AddressBookModel {
 
     }
 
-    //persondetail menu
+    //person detail menu
     private static void personOperation() {
         setContinueflag(true);
         addressBook = new AddressBookImp();
@@ -76,7 +76,7 @@ public class Main extends AddressBookModel {
                     do {
                         System.out.println("Enter the users first name with last name to delete.\n(eg. firstname lastename)");
                         addressBook.removePerson(Utility.getString(false, "search"));//method to delete.
-                        System.out.println("Press 'd' to edit another person or Press any key to close");
+                        System.out.println("Press 'd' to delete another person or Press any key to close");
                     } while (Utility.getString(false).toUpperCase().equals("D"));
                     break;
                 case 4://search option

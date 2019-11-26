@@ -8,6 +8,7 @@ Purpose of Creating : This is to perform all file level operations
 
 
 import com.blbz.inventorymanagement.model.Inventory;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -29,6 +30,10 @@ public class JsonFileHandler {
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = ((JSONObject) jsonParser.parse(Inventory.getFr()));
             Inventory.setInv(jsonObject);
+            JSONArray ary=new JSONArray();
+            for(Object s:ary){
+
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
