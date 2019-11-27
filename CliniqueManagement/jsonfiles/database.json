@@ -1,0 +1,51 @@
+{
+  "Appointment": [],
+  "Details": [
+    4,
+    2
+  ],
+  "Patients": {
+    "Phone": [
+      "9988776655",
+      "8877445566"
+    ],
+    "ID": [
+      "PT0001",
+      "PT0002"
+    ],
+    "Age": [
+      "55",
+      "23"
+    ],
+    "Name": [
+      "tamil",
+      "anand"
+    ]
+  },
+  "Doctors": {
+    "Availability": [
+      "8:00 AM - 7:30 PM",
+      "7:00 AM - 9:00 AM",
+      "1:00 PM -10:00 PM",
+      "11:00 AM - 12:00 PM"
+    ],
+    "Specialization": [
+      "java",
+      "eye",
+      "eye",
+      "bone"
+    ],
+    "ID": [
+      "DC0001",
+      "DC0002",
+      "DC0003",
+      "DC0004"
+    ],
+    "Name": [
+      "madam",
+      "amit",
+      "selvan",
+      "tm"
+    ]
+  }
+}
