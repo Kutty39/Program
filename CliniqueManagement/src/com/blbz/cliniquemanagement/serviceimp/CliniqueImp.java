@@ -18,6 +18,9 @@ public class CliniqueImp implements Clinique {
         readJson();
     }
 
+    /*
+    adding doctor detail
+     */
     @Override
     public void addDoctor(String name, String specialization, String availability) {
         getDname().add(name);
@@ -32,6 +35,9 @@ public class CliniqueImp implements Clinique {
         writeJson();
     }
 
+    /*
+    adding patient detail
+     */
     @Override
     public void addPatient(String pname, String ph, String age) {
         getPname().add(pname);
@@ -46,6 +52,9 @@ public class CliniqueImp implements Clinique {
         writeJson();
     }
 
+    /*
+    validating the id. which is given by user
+     */
     @Override
     public String validateID(String id) {
         readJson();
@@ -58,6 +67,10 @@ public class CliniqueImp implements Clinique {
         }
     }
 
+    /*
+    To retrieving appointment detail form the JSON
+    need to pass date and person(Doctor/Patient)
+     */
     @Override
     public void getAppointment(String id, String date, String person) {
         JSONObject tmp = (JSONObject) getAppointmentArray().get(date);
@@ -77,7 +90,7 @@ public class CliniqueImp implements Clinique {
                     System.out.println("________________________________________________");
                 }
             } else if (person.equals("Patient")) {
-                int i=0;
+                int i = 0;
                 for (Object s : (JSONArray) tmp.get("Pt ID")) {
                     JSONArray ary = (JSONArray) s;
                     for (Object s1 : ary) {
@@ -99,6 +112,9 @@ public class CliniqueImp implements Clinique {
 
     }
 
+    /*
+        it will search the doctor detail base on the search text
+         */
     @Override
     public List<String> searchDoctor(String string) {
         List<String> idL = new ArrayList<>();
@@ -133,6 +149,11 @@ public class CliniqueImp implements Clinique {
         return idL;
     }
 
+    /*
+    Creating appointment using patient id , doctor id and date
+    it will check whether the doctor have 5 patient for one day, if he has then ask the user to make appointment for next day
+    if patient aleady have appointment on the day it will show the appointment detail.
+     */
     @Override
     public void createAppointment(String ptid, String dcid, LocalDate date) {
         JSONObject ap = new JSONObject();
@@ -192,6 +213,9 @@ public class CliniqueImp implements Clinique {
         }
     }
 
+    /*
+    it will create id for doctor and patient
+     */
     private String getID(String person) {
         long val = 0;
         if (person.equals("Doctor")) {

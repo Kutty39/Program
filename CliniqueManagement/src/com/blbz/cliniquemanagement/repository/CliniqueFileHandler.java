@@ -1,6 +1,5 @@
 package com.blbz.cliniquemanagement.repository;
 
-import com.blbz.cliniquemanagement.model.CliniqueModel;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -12,10 +11,12 @@ import java.io.IOException;
 import static com.blbz.cliniquemanagement.model.CliniqueModel.*;
 
 public class CliniqueFileHandler {
+    //Constructor to read JSON first and it will initiate all the elements
     public CliniqueFileHandler() {
         readJson();
     }
 
+    //reading method
     public static void readJson() {
         try (FileReader fr = new FileReader(getFilename())) {
             JSONObject base = (JSONObject) jsonreader.parse(fr);
@@ -61,6 +62,7 @@ public class CliniqueFileHandler {
         }
     }
 
+    // it will get he base object and write on the file
     public static void writeJson() {
         try (FileWriter fw = new FileWriter(getFilename())) {
             fw.write(getBase().toJSONString());

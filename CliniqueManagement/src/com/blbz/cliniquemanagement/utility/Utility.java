@@ -6,7 +6,9 @@ import java.util.Scanner;
 
 public class Utility {
     private static Scanner sc = new Scanner(System.in);
-
+/*
+all kind of a string can get using the below method
+ */
     public static String getString(String... field) {
         String tmp = "";
         if (field.length == 0) {
@@ -60,9 +62,16 @@ public class Utility {
         return tmp;
     }
 
+    /*
+    this is to get free text
+     */
     public static String getFreeText() {
         return sc.nextLine();
     }
+
+    /*
+    it is for integers
+     */
 
     public static int getInt() {
         int val = 0;
@@ -77,6 +86,9 @@ public class Utility {
         return val;
     }
 
+    /*
+    checking valid date
+     */
     public static LocalDate curnfutDate(String date) {
 
         if (LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy")).compareTo(LocalDate.now()) < 0) {

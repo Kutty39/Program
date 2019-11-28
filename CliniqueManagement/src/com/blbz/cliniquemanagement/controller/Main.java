@@ -1,4 +1,9 @@
 package com.blbz.cliniquemanagement.controller;
+/*
+Created by  : Tamilselvan S
+Created on  : 27/11/2019
+Purpose     : This programme is used to manage a list of Doctors associated with the Clinique. This also manages the list of patients who use the clinique
+ */
 
 import com.blbz.cliniquemanagement.service.Clinique;
 import com.blbz.cliniquemanagement.serviceimp.CliniqueImp;
@@ -15,6 +20,7 @@ public class Main {
     public static void main(String[] args) {
         cl = new CliniqueImp();
         int choice = 0;
+        //Initial menu
         do {
             System.out.println("Clinique Management System");
             System.out.println("--------------------------");
@@ -40,6 +46,13 @@ public class Main {
         } while (choice == 0);
     }
 
+    /*
+    Login method. it will ask only ID and check whether they are available in the database or not
+    after sign in, it will give the separate menu for doctor and patient
+    it will show the appointment for the current day by default
+    Doctor can see the appointment details for any day
+    Patient can see as well as create new appointment
+     */
     private static void signin() {
         String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         boolean choice = true;
@@ -112,6 +125,9 @@ public class Main {
         }
     }
 
+    /*
+    first time patient/doctor both have to open new account by giving their personal details
+     */
     private static void signUp() {
         System.out.println("Please give us the below information");
         System.out.println("1.Doctor\n2.Patient");
