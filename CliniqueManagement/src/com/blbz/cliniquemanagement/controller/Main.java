@@ -41,23 +41,27 @@ public class Main {
     }
 
     private static void signin() {
-        String date = LocalDate.now().format(DateTimeFormatter.ofPattern("DD/MM/YYYY"));
+        String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         boolean choice = true;
 
         System.out.println("Enter your ID");
-        String id = cl.validateID(Utility.getFreeText());
-        while (id.equals("Invalid")) {
-            id = cl.validateID(Utility.getFreeText());
+        String id = Utility.getFreeText();
+        String valid = cl.validateID(id);
+        while (valid.equals("Invalid")) {
+            id = Utility.getFreeText();
+            valid = cl.validateID(id);
         }
-        switch (id) {
+        switch (valid) {
             case "Doctor":
+                System.out.println("Welcome doctor");
+                cl.getAppointment(id, date, "Doctor");
                 do {
-                    cl.getAppointment(date, "Doctor");
                     System.out.println("1.Your appointment on any other date\n2.Exit");
                     switch (Utility.getInt()) {
                         case 1:
-                            System.out.println("Enter the date(dd/mm/yyyy eg. 01/01/2019)");
-                            cl.getAppointment(Utility.getString("Date"), "Doctor");
+                            System.out.println("Enter the date(dd-mm-yyyy eg. 31-01-2019)");
+                            date = Utility.getString("date");
+                            cl.getAppointment(id, date, "Doctor");
                             break;
                         case 2:
                             choice = false;
@@ -69,7 +73,8 @@ public class Main {
 
                 break;
             case "Patient":
-                //cl.getAppointment(date,"Patient");
+                System.out.println("Welcome to our clinic");
+                cl.getAppointment(id, date, "Patient");
                 do {
                     System.out.println("1.Create new appointment\n2.Search appointment on any other date\n3.Exit");
 
@@ -84,14 +89,17 @@ public class Main {
                                     System.out.println("Enter correct id");
                                     did = Utility.getFreeText();
                                 }
-                                System.out.println("Enter the date");
-                                date=Utility.curnfutDate(Utility.getString("date"));
-                                cl.createAppointment(id,did,date);
+                                System.out.println("Enter the date(dd-mm-yyyy. eg. 30-01-2019)");
+                                LocalDate date1 = Utility.curnfutDate(Utility.getString("date"));
+                                cl.createAppointment(id, did, date1);
                             } else {
                                 System.out.println("No data found");
                             }
                             break;
                         case 2:
+                            System.out.println("Enter the date(dd-mm-yyyy eg. 31-01-2019)");
+                            date = Utility.getString("date");
+                            cl.getAppointment(id, date, "Patient");
                             break;
                         case 3:
                             choice = false;

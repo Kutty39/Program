@@ -1,5 +1,6 @@
 package com.blbz.cliniquemanagement.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface Clinique {
@@ -9,9 +10,9 @@ public interface Clinique {
 
     String validateID(String string);
 
-    void getAppointment(String date, String person);
+    void getAppointment(String id,String date, String person);
 
     List<String> searchDoctor(String string);
 
-    void createAppointment(String ptid, String dcid, String date);
+    void createAppointment(String ptid, String dcid, LocalDate date);
 }

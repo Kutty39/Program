@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a899ef16-708a-466e-9428-a94bf86e8ec2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsonfiles/database1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/model/CliniqueModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/repository/CliniqueFileHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/service/Clinique.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CliniqueManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CliniqueManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsonfiles/appointment.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/database.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsonfiles/doctor.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsonfiles/patient.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonfiles/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/database.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonfiles/database1.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfiles/database1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/model/CliniqueModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/model/CliniqueModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/repository/CliniqueFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/repository/CliniqueFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/service/Clinique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/service/Clinique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blbz/cliniquemanagement/utility/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/AddressBook/com/blbz/addressbook/Util/Utility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/AddressBook/com/blbz/addressbook/controller/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/AddressBook/com/blbz/addressbook/model/AddressBookModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/AddressBook/com/blbz/addressbook/repository/AddressBookFileHandaling.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/AddressBook/com/blbz/addressbook/service/AddressBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/AddressBook/com/blbz/addressbook/serviceimpl/AddressBookImp.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,23 +41,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/jsonfiles" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -87,6 +65,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -98,6 +88,14 @@
       <option name="presentableId" value="Default" />
       <updated>1574780573952</updated>
     </task>
+    <task id="LOCAL-00001" summary="Clinic">
+      <created>1574863209992</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574863209992</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,14 +111,65 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Clinic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clinic" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="399" y="125" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1574843519190">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="399" y="125" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1299.741@67.27.1299.741" timestamp="1574843519190" />
-    <state x="372" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1574843584294">
+    <state width="430" height="466" key="DebuggerActiveHint" timestamp="1574925960228">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1574843584294" />
+    <state width="430" height="466" key="DebuggerActiveHint/67.27.1299.741@67.27.1299.741" timestamp="1574925960228" />
+    <state width="1253" height="174" key="GridCell.Tab.0.bottom" timestamp="1574926471948">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="174" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1574926471948" />
+    <state width="1253" height="174" key="GridCell.Tab.0.center" timestamp="1574926471947">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="174" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1574926471947" />
+    <state width="1253" height="174" key="GridCell.Tab.0.left" timestamp="1574926471946">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="174" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1574926471946" />
+    <state width="1253" height="174" key="GridCell.Tab.0.right" timestamp="1574926471948">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="174" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1574926471948" />
+    <state width="1253" height="219" key="GridCell.Tab.1.bottom" timestamp="1574926201162">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.bottom/67.27.1299.741@67.27.1299.741" timestamp="1574926201162" />
+    <state width="1253" height="219" key="GridCell.Tab.1.center" timestamp="1574926201161">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.center/67.27.1299.741@67.27.1299.741" timestamp="1574926201161" />
+    <state width="1253" height="219" key="GridCell.Tab.1.left" timestamp="1574926201161">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.left/67.27.1299.741@67.27.1299.741" timestamp="1574926201161" />
+    <state width="1253" height="219" key="GridCell.Tab.1.right" timestamp="1574926201162">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="219" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1574926201162" />
+    <state x="372" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1574913926093">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1574913926093" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/blbz/cliniquemanagement/repository/CliniqueFileHandler.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

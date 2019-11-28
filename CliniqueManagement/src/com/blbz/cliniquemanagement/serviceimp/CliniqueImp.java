@@ -59,7 +59,43 @@ public class CliniqueImp implements Clinique {
     }
 
     @Override
-    public void getAppointment(String date, String person) {
+    public void getAppointment(String id, String date, String person) {
+        JSONObject tmp = (JSONObject) getAppointmentArray().get(date);
+        if (tmp != null) {
+            if (person.equals("Doctor")) {
+                JSONArray ary = (JSONArray) tmp.get("Dc ID");
+                if (ary.contains(id)) {
+                    JSONArray ary1 = (JSONArray) tmp.get("Pt ID");
+                    System.out.println("----------" + date + " Appointment Detail ----------");
+                    for (Object s : (JSONArray) ary1.get(ary.indexOf(id))) {
+                        int pos = getPid().indexOf(s);
+                        System.out.print("Patient Name:" + getPname().get(pos));
+                        System.out.print("\tPatient Age:" + getPtage().get(pos));
+                        System.out.print("\tPatient Phone:" + getPphn().get(pos));
+                        System.out.println();
+                    }
+                    System.out.println("________________________________________________");
+                }
+            } else if (person.equals("Patient")) {
+                int i=0;
+                for (Object s : (JSONArray) tmp.get("Pt ID")) {
+                    JSONArray ary = (JSONArray) s;
+                    for (Object s1 : ary) {
+                        if (id.equals(s1.toString())) {
+                            JSONArray ary1 = (JSONArray) tmp.get("Dc ID");
+                            int pos = getDid().indexOf(ary1.get(i));
+                            System.out.println("----------" + date + " Appointment Detail ----------");
+                            System.out.println("Doctor Name\t:\t" + getDname().get(pos));
+                            System.out.println("Specialization\t:\t" + getDspc().get(pos));
+                            System.out.println("Availability\t:\t" + getDavl().get(pos));
+                            System.out.println("________________________________________________");
+                            break;
+                        }
+                    }
+                    ++i;
+                }
+            }
+        }
 
     }
 
@@ -98,31 +134,59 @@ public class CliniqueImp implements Clinique {
     }
 
     @Override
-    public void createAppointment(String ptid, String dcid, String date) {
+    public void createAppointment(String ptid, String dcid, LocalDate date) {
         JSONObject ap = new JSONObject();
-        JSONObject ap1 = new JSONObject();
-        JSONArray pary = new JSONArray();
-        pary.add(ptid);
-        ap.put("Pt ID", pary);
-        ap.put("Dc ID", dcid);
-        ap1.put(date, ap);
-        pary.clear();
-        pary.add(ap1);
-        if (getAppointments() != null) {
-            if (getAppointments().contains(date)) {
-                ap = (JSONObject) getAppointments().get(getAppointments().indexOf(date));
-                pary = (JSONArray) ap.get("Pt ID");
-                if (pary.size() < 5) {
-                } else {
-                    System.out.println("All slot full. shall i set appointment on "+LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).plusDays(1).toString()+"?\n" +
-                            "Press 'y' for yes, any key for cancel");
-                    if(Utility.getString().toUpperCase().equals("Y")){
-                        createAppointment(ptid,dcid, LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).plusDays(1).toString());
+        JSONArray ary = new JSONArray();
+        JSONArray ary1 = new JSONArray();
+        DateTimeFormatter pat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String datestring = date.format(pat);
+
+        ary.add(ptid);
+        ary1.add(ary);
+        ap.put("Pt ID", ary1);
+        ary = new JSONArray();
+        ary.add(dcid);
+        ap.put("Dc ID", ary);
+
+
+        if (getAppointmentArray() != null) {
+            if (getAppointmentArray().get(datestring) != null) {
+                ap = new JSONObject();
+                ap = (JSONObject) getAppointmentArray().get(datestring);
+                ary = new JSONArray();
+                ary1 = new JSONArray();
+                ary1 = (JSONArray) ap.get("Dc ID");
+                if (ary1.contains(dcid)) {
+                    ary = (JSONArray) ap.get("Pt ID");
+                    ary = (JSONArray) ary.get(ary1.indexOf(dcid));
+                    if (ary.size() < 5) {
+                        if (ary.contains(ptid)) {
+                            System.out.println("Already you have one appointment on this date. below is the detail");
+                            getAppointment(ptid, datestring, "Patient");
+                        } else {
+                            ary.add(ptid);
+                            writeJson();
+                        }
+                    } else {
+                        System.out.println("All slot full. shall i set appointment on " + date.plusDays(1).format(pat) + "?\n" +
+                                "Press 'y' for yes, any key for cancel");
+                        if (Utility.getString().toUpperCase().equals("Y")) {
+                            createAppointment(ptid, dcid, date.plusDays(1));
+                        }
                     }
+                } else {
+                    ary1.add(dcid);
+                    ary1 = (JSONArray) ap.get("Pt ID");
+                    ary = new JSONArray();
+                    ary.add(ptid);
+                    ary1.add(ary);
+                    writeJson();
                 }
             } else {
-                getAppointments().add(ap1);
-                setAppointments(getAppointments());
+
+                getAppointmentArray().put(datestring, ap);
+                setAppointments(getAppointmentArray());
+                writeJson();
             }
 
         }

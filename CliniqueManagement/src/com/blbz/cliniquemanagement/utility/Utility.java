@@ -46,9 +46,9 @@ public class Utility {
                             }
                             sc.reset();
                             tmp = sc.nextLine();
-                        } while (!tmp.matches("\\d{2}/\\d{2}/\\d{4}"));
+                        } while (!tmp.matches("\\d{2}-\\d{2}-\\d{4}"));
                         try {
-                            LocalDate.parse(tmp, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                            LocalDate.parse(tmp, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
                             f = false;
                         } catch (Exception e) {
                             f = true;
@@ -77,11 +77,12 @@ public class Utility {
         return val;
     }
 
-    public static String curnfutDate(String date) {
-        if (LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).compareTo(LocalDate.now()) < 0) {
+    public static LocalDate curnfutDate(String date) {
+
+        if (LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy")).compareTo(LocalDate.now()) < 0) {
             System.out.println("Please enter current or future date");
             date=Utility.getString("date");
         }
-        return date;
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 }

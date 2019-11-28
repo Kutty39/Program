@@ -54,7 +54,7 @@ public class CliniqueFileHandler {
                         break;
                 }
             });
-            setAppointments((JSONArray) base.get("Appointment"));
+            setAppointments((JSONObject) base.get("Appointment"));
             setDetails((JSONArray) base.get("Details"));
         } catch (IOException | ParseException e) {
             e.printStackTrace();

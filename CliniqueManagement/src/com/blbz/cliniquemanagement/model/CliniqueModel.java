@@ -9,7 +9,7 @@ import org.json.simple.parser.JSONParser;
 public class CliniqueModel {
     private static JSONObject doctors = new JSONObject();
     private static JSONObject patients = new JSONObject();
-    private static JSONArray appointments = new JSONArray();
+    private static JSONObject appointments = new JSONObject();
     private static JSONArray details = new JSONArray();
 
     private static JSONArray dname = new JSONArray();
@@ -47,11 +47,11 @@ public class CliniqueModel {
         CliniqueModel.patients = patients;
     }
 
-    public static JSONArray getAppointments() {
+    public static JSONObject getAppointmentArray() {
         return appointments;
     }
 
-    public static void setAppointments(JSONArray appointments) {
+    public static void setAppointments(JSONObject appointments) {
         CliniqueModel.appointments = appointments;
     }
 
