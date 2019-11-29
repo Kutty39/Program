@@ -1,23 +1,18 @@
 package com.blbz.deckofcards.utility;
 
-public class MyQueue<T extends Comparable> extends OrderedList {
+public class MyQueue<T> extends OrderedList<T> {
        /*
 Created by : Mr. Tamilselvan S
 Created on : 15/11/2019
 Purpose of Creating : To achieve the Q concept with the help of linked list
  */
 
-
-    void MyQueue() {
-        new MyQueue<>();
-    }//create instance
-
-    void enQueue(T item,T rank) {
-        add(item,rank);
+    public void enQueue(T item, int rank) {
+        add(item, rank);
     }//Adding the element
 
-    //Deleting and returning the last element
-    T deQueus() {
+    //Deleting and returning the first element
+    public T deQueus() {
         Node<T> tmp = head;
 
         if (isEmpty()) {
@@ -30,7 +25,7 @@ Purpose of Creating : To achieve the Q concept with the help of linked list
     }
 
     //To check the Q has any value
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return head == null;
     }
 }
