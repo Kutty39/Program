@@ -51,4 +51,14 @@ public class StockAccountFileHandler {
             e.printStackTrace();
         }
     }
+
+    public void writeJSON() {
+        try(FileWriter fw=new FileWriter(getFilename())){
+            fw.write(getBaseobjuser().toJSONString());
+            fw.flush();
+            System.out.println("Account File saved!!!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

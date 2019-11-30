@@ -5,8 +5,10 @@ public interface StockAccount {
     boolean openJSON(String filename);
     double valueof();
     void buy(double amount, String symbol);
-    void sell(int amount,String symbol);
-    void save(String filename);
-    void printReport();
-
+    void sell(double amount,String symbol);
+    void save();
+    boolean validateSym(String sym);
+    double validateAmt(String sym);
+    void holdingReport();
+    void transactionReport();
 }

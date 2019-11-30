@@ -26,7 +26,7 @@ public class CompanyFileHandler {
         try(FileWriter fw=new FileWriter(getCompanyfilename())){
             fw.write(getBaseobjcompany().toJSONString());
             fw.flush();
-            System.out.println("File saved!!!");
+            System.out.println("Company File saved!!!");
         } catch (IOException e) {
             e.printStackTrace();
         }

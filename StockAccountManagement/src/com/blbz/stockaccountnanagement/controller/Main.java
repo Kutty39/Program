@@ -176,7 +176,7 @@ public class Main {
             System.out.println("*******************************");
             System.out.println("\tUser Action Menu");
             System.out.println("*******************************");
-            System.out.println("1.Show Account Balance\n2.Buy Share\n3.Sell Share\n4.Holding Report\n5.Transaction Report");
+            System.out.println("1.Show Account Balance\n2.Buy Share\n3.Sell Share\n4.Holding Report\n5.Transaction Report\n6.Save\n7.Add amount\n8.Exit");
             switch (ut.getInput()) {
                 case 1:
                     System.out.println("your account balance is " + sk.valueof());
@@ -197,14 +197,54 @@ public class Main {
                         amount = ut.getInputDouble();
                     } while ((sk.valueof() < amount));
                     sk.buy(amount, sym);
+                    sym="";
+                    amount=0;
                     break;
                 case 3:
+                    System.out.println("Enter stock symbol to sell");
+                    do {
+                        if (!sym.equals("")) {
+                            System.out.println("Enter valid stock symbol");
+                        }
+                        sym = ut.getInputString();
+                    } while (!sk.validateSym(sym));
+                    System.out.println("Enter the amount to sell");
+                    do {
+                        if (amount != 0) {
+                            System.out.println("You don't have sufficient amount.\n you have " + sk.validateAmt(sym) + " in your account");
+                        }
+                        amount = ut.getInputDouble();
+                    } while ((sk.validateAmt(sym) < amount));
+                    sk.sell(amount,sym);
+                    sym="";
+                    amount=0;
                     break;
                 case 4:
+                    sk.holdingReport();
+                    System.out.println("press any key to cancel");
+                    ut.getInputString();
                     break;
                 case 5:
+                    sk.transactionReport();
+                    System.out.println("press any key to cancel");
+                    ut.getInputString();
                     break;
                 case 6:
+                    cm.save();
+                    sk.save();
+                    break;
+                case 7:
+                    System.out.println("How much you want to add?");
+
+                    break;
+                case 8:
+                    if (StockModel.isFiledited()) {
+                        System.out.println("Some changes are not saved. press 'y' to save.press any key to cancel");
+                        if (ut.getInputString().toUpperCase().equals("Y")) {
+                            cm.save();
+                            sk.save();
+                        }
+                    }
                     choice = 1;
                     break;
                 default:
