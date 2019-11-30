@@ -197,8 +197,8 @@ public class Main {
                         amount = ut.getInputDouble();
                     } while ((sk.valueof() < amount));
                     sk.buy(amount, sym);
-                    sym="";
-                    amount=0;
+                    sym = "";
+                    amount = 0;
                     break;
                 case 3:
                     System.out.println("Enter stock symbol to sell");
@@ -215,9 +215,9 @@ public class Main {
                         }
                         amount = ut.getInputDouble();
                     } while ((sk.validateAmt(sym) < amount));
-                    sk.sell(amount,sym);
-                    sym="";
-                    amount=0;
+                    sk.sell(amount, sym);
+                    sym = "";
+                    amount = 0;
                     break;
                 case 4:
                     sk.holdingReport();
@@ -235,7 +235,7 @@ public class Main {
                     break;
                 case 7:
                     System.out.println("How much you want to add?");
-
+                    sk.addingAmount(ut.getInputDouble());
                     break;
                 case 8:
                     if (StockModel.isFiledited()) {

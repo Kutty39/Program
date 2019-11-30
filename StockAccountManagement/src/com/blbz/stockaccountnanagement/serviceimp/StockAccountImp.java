@@ -251,4 +251,10 @@ public class StockAccountImp implements StockAccount {
             System.out.println();
         });
     }
+
+    @Override
+    public void addingAmount(double inputDouble) {
+        getBaseobjuser().put("Amount",valueof()+inputDouble);
+        setFiledited(true);
+    }
 }

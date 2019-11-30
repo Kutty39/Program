@@ -11,4 +11,6 @@ public interface StockAccount {
     double validateAmt(String sym);
     void holdingReport();
     void transactionReport();
+
+    void addingAmount(double inputDouble);
 }
