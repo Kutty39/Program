@@ -17,7 +17,7 @@ public class StockAccountImp implements StockAccount {
         saf = new StockAccountFileHandler();
     }
 
-    public void StockAccount(String filename, double amount) {
+    public void stockAccount(String filename, double amount) {
         saf.createJSON(filename, amount);
     }
 

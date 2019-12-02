@@ -3,14 +3,14 @@ package com.blbz.stockaccountnanagement.utility;
 import java.util.Scanner;
 
 public class Utility {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
-    public String getInputString(String... s) {
+    public static String getInputString(String... s) {
         sc.reset();
         return sc.nextLine();
     }
 
-    public int getInput() {
+    public static int getInput() {
         int val = 0;
         sc.reset();
         try {
@@ -22,7 +22,7 @@ public class Utility {
         }
     }
 
-    public double getInputDouble() {
+    public static double getInputDouble() {
         double val = 0;
         sc.reset();
         try {

@@ -7,12 +7,10 @@ import org.json.simple.JSONObject;
 
 import static com.blbz.stockaccountnanagement.model.StockModel.*;
 
-public class CompanyImp implements Company {
-    CompanyFileHandler cfh;
+public class CompanyImp extends CompanyFileHandler implements Company {
 
     public CompanyImp() {
-        cfh = new CompanyFileHandler();
-        cfh.readCompanyJSON();
+        readCompanyJSON();
     }
 
     @Override
@@ -45,18 +43,13 @@ public class CompanyImp implements Company {
 
     @Override
     public void save() {
-        cfh.writeCompanyJSON();
+        writeCompanyJSON();
         setFiledited(false);
     }
 
     @Override
     public String getdetails(String sym) {
-        String str = getBaseobjcompany().get(sym).toString();
-        if (str != null) {
-            return str;
-        } else {
-            return null;
-        }
+        return getBaseobjcompany().get(sym).toString();
     }
 
     @Override

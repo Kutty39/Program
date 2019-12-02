@@ -17,15 +17,14 @@ import com.blbz.stockaccountnanagement.serviceimp.CompanyImp;
 import com.blbz.stockaccountnanagement.serviceimp.StockAccountImp;
 import com.blbz.stockaccountnanagement.utility.Utility;
 
-public class Main {
-    static Utility ut = new Utility();
+public class Main extends Utility {
 
     public static void main(String[] args) {
         int choice = 0;
         do {
             System.out.println("Welcome to stock management");
             System.out.println("1.User Menu\n2.company menu\n3.Exit");
-            switch (ut.getInput()) {
+            switch (getInput()) {
                 case 1:
                     userMenu();
                     break;
@@ -44,57 +43,57 @@ public class Main {
 
     private static void companyMenu() {
         Company cm = new CompanyImp();
-        String sym = "";
+        String sym;
         int choice = 0;
-        double nos = 0;
-        double price = 0;
-        String name = "";
+        double nos;
+        double price;
+        String name;
 
         do {
             System.out.println("*****************************");
             System.out.println("\tCompany Menu");
             System.out.println("*****************************");
             System.out.println("1.Add Company\n2.Edit company\n3.Delete company\n4.Save\n5.Report\n6.Exit");
-            switch (ut.getInput()) {
+            switch (getInput()) {
                 case 1:
                     System.out.println("Enter Company Name");
-                    name = ut.getInputString();
+                    name = getInputString();
                     System.out.println("Enter stock symbol for your company");
                     sym = "";
                     do {
                         if (!sym.equals("")) {
                             System.out.println("this stock symbol is already available.please enter another symbol");
                         }
-                        sym = ut.getInputString();
+                        sym = getInputString();
                     } while (!cm.validateSym(sym));
                     System.out.println("Enter no. of share");
-                    nos = ut.getInputDouble();
+                    nos = getInputDouble();
                     System.out.println("Please enter price of one stock");
-                    price = ut.getInputDouble();
+                    price = getInputDouble();
                     cm.addStock(name, sym, nos, price);
                     break;
                 case 2:
                     System.out.println("Enter the stock symbol to edit");
-                    sym = ut.getInputString();
+                    sym = getInputString();
                     String[] dt = cm.getdetails(sym).replace("[", "").replace("]", "").split(",");
                     System.out.println("Company name :" + dt[0] + "\nWant to change press'y'.press any key to next");
-                    if (ut.getInputString().toUpperCase().equals("Y")) {
+                    if (getInputString().toUpperCase().equals("Y")) {
                         System.out.println("Enter company name");
-                        name = ut.getInputString();
+                        name = getInputString();
                     } else {
                         name = dt[0];
                     }
                     System.out.println("no. of share :" + dt[1] + "\nWant to change press'y'.press any key to next");
-                    if (ut.getInputString().toUpperCase().equals("Y")) {
+                    if (getInputString().toUpperCase().equals("Y")) {
                         System.out.println("Enter no. of share");
-                        nos = ut.getInputDouble();
+                        nos = getInputDouble();
                     } else {
                         nos = Double.parseDouble(dt[1]);
                     }
                     System.out.println("stock price:" + dt[1] + "\nWant to change press'y'.press any key to next");
-                    if (ut.getInputString().toUpperCase().equals("Y")) {
+                    if (getInputString().toUpperCase().equals("Y")) {
                         System.out.println("Please enter price of one stock");
-                        price = ut.getInputDouble();
+                        price = getInputDouble();
                     } else {
                         price = Double.parseDouble(dt[1]);
                     }
@@ -102,7 +101,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Enter the stock symbol to delete");
-                    sym = ut.getInputString();
+                    sym = getInputString();
                     if (cm.deleteStock(sym)) {
                         System.out.println("Deleted successfully");
                     } else {
@@ -115,12 +114,12 @@ public class Main {
                 case 5:
                     cm.displayAllDetails();
                     System.out.println("press enter to exit");
-                    ut.getInputString();
+                    getInputString();
                     break;
                 case 6:
                     if (StockModel.isFiledited()) {
                         System.out.println("Some changes are not saved. press 'y' to save.press any key to cancel");
-                        if (ut.getInputString().toUpperCase().equals("Y")) {
+                        if (getInputString().toUpperCase().equals("Y")) {
                             cm.save();
                         }
                     }
@@ -141,18 +140,18 @@ public class Main {
             System.out.println("\tUser Menu");
             System.out.println("*********************");
             System.out.println("1.Create new profile\n2.Open existing profile\n3.Exit");
-            switch (ut.getInput()) {
+            switch (getInput()) {
                 case 1:
                     System.out.println("Enter the name to create");
-                    String name = ut.getInputString();
+                    String name = getInputString();
                     System.out.println("Enter the initial amount");
-                    double amount = ut.getInputDouble();
-                    sk.StockAccount(name, amount);
+                    double amount = getInputDouble();
+                    sk.stockAccount(name, amount);
                     userAction();
                     break;
                 case 2:
                     System.out.println("Enter the name to open");
-                    if (sk.openJSON(ut.getInputString())) {
+                    if (sk.openJSON(getInputString())) {
                         userAction();
                     }
                     break;
@@ -177,7 +176,7 @@ public class Main {
             System.out.println("\tUser Action Menu");
             System.out.println("*******************************");
             System.out.println("1.Show Account Balance\n2.Buy Share\n3.Sell Share\n4.Holding Report\n5.Transaction Report\n6.Save\n7.Add amount\n8.Exit");
-            switch (ut.getInput()) {
+            switch (getInput()) {
                 case 1:
                     System.out.println("your account balance is " + sk.valueof());
                     break;
@@ -187,14 +186,14 @@ public class Main {
                         if (!sym.equals("")) {
                             System.out.println("Enter valid stock symbol");
                         }
-                        sym = ut.getInputString();
+                        sym = getInputString();
                     } while (cm.validateSym(sym));
                     System.out.println("Enter the amount to buy");
                     do {
                         if (amount != 0) {
                             System.out.println("You don't have sufficient amount.\n you have " + sk.valueof() + " in your account");
                         }
-                        amount = ut.getInputDouble();
+                        amount = getInputDouble();
                     } while ((sk.valueof() < amount));
                     sk.buy(amount, sym);
                     sym = "";
@@ -206,14 +205,14 @@ public class Main {
                         if (!sym.equals("")) {
                             System.out.println("Enter valid stock symbol");
                         }
-                        sym = ut.getInputString();
+                        sym = getInputString();
                     } while (!sk.validateSym(sym));
                     System.out.println("Enter the amount to sell");
                     do {
                         if (amount != 0) {
                             System.out.println("You don't have sufficient amount.\n you have " + sk.validateAmt(sym) + " in your account");
                         }
-                        amount = ut.getInputDouble();
+                        amount = getInputDouble();
                     } while ((sk.validateAmt(sym) < amount));
                     sk.sell(amount, sym);
                     sym = "";
@@ -222,12 +221,12 @@ public class Main {
                 case 4:
                     sk.holdingReport();
                     System.out.println("press any key to cancel");
-                    ut.getInputString();
+                    getInputString();
                     break;
                 case 5:
                     sk.transactionReport();
                     System.out.println("press any key to cancel");
-                    ut.getInputString();
+                    getInputString();
                     break;
                 case 6:
                     cm.save();
@@ -235,12 +234,12 @@ public class Main {
                     break;
                 case 7:
                     System.out.println("How much you want to add?");
-                    sk.addingAmount(ut.getInputDouble());
+                    sk.addingAmount(getInputDouble());
                     break;
                 case 8:
                     if (StockModel.isFiledited()) {
                         System.out.println("Some changes are not saved. press 'y' to save.press any key to cancel");
-                        if (ut.getInputString().toUpperCase().equals("Y")) {
+                        if (getInputString().toUpperCase().equals("Y")) {
                             cm.save();
                             sk.save();
                         }
