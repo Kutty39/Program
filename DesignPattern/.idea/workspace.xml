@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="945e32e0-40a2-4d47-b552-f6aa933c0914" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPattern.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Observees.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/ObservingCenter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Sellar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Warehouse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/observer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/blbz/designpattern/controller/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/SimpleUserPage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CliniqueManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CliniqueManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CliniqueManagement/jsonfiles/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CliniqueManagement/jsonfiles/database.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CliniqueManagement/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CliniqueManagement/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UT0TvxTr6xWfxrmBe1v5YixnKP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.blbz.stockaccountnanagement.controller.Main" />
+      <module name="DesignPattern" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blbz.designpattern.controller.Main" />
+      <module name="DesignPattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blbz.designpattern.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="945e32e0-40a2-4d47-b552-f6aa933c0914" name="Default Changelist" comment="" />
+      <created>1575365288855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575365288855</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1575367670457">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1575367670457" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1575367872060">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1575367872060" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1575367872059">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1575367872059" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1575367872058">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1575367872058" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1575367872059">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1575367872059" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575434999212">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1575434999212" />
+    <state x="67" y="27" width="1289" height="741" key="new project wizard" timestamp="1575440800701">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="67" y="27" width="1289" height="741" key="new project wizard/67.27.1299.741@67.27.1299.741" timestamp="1575440800701" />
+  </component>
+</project>
