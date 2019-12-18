@@ -1,4 +1,4 @@
-package com.blbz.designpattern.controller;
+package com.blbz.designpattern;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,37 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="945e32e0-40a2-4d47-b552-f6aa933c0914" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPattern.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Observees.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/ObservingCenter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Sellar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Warehouse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/observer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/blbz/designpattern/controller/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SimpleUserPage/SimpleUserPage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CliniqueManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CliniqueManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CliniqueManagement/jsonfiles/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CliniqueManagement/jsonfiles/database.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CliniqueManagement/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CliniqueManagement/src/com/blbz/cliniquemanagement/serviceimp/CliniqueImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/controller/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/controller/InstanceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/controller/Singleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model/BillPugh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model/Eaget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model/EnumClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model/Lazy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model/Lazy1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model/StaticBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/service/ExampleClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/serviceimpl/ExampleImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/serviceimpl/ExampleImplEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/serviceimpl/ExampleImplSer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/serviceimpl/ExampleImplSerWithResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj1.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj2.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Observees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/ObservingCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Sellar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/Warehouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPattern/com/blbz/designpattern/controller/observer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/blbz/designpattern/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Observer/src/com/blbz/designpattern/Main.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -45,17 +54,57 @@
     </option>
   </component>
   <component name="ProjectId" id="1UT0TvxTr6xWfxrmBe1v5YixnKP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Singleton/src/com/blbz/singleton/model" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gbs04344\Desktop\Tamil\Program\DesignPattern\Singleton\src\com\blbz\singleton\model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.blbz.singleton.serviceimpl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gbs04344\Desktop\Tamil\Program\DesignPattern\Observer" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Factory">
+    <configuration name="Factory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blbz.singleton.controller.Factory" />
+      <module name="DesignPattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blbz.singleton.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.blbz.stockaccountnanagement.controller.Main" />
       <module name="DesignPattern" />
@@ -79,18 +128,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+    <configuration name="Singleton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blbz.singleton.controller.Singleton" />
+      <module name="DesignPattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blbz.singleton.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <item itemvalue="Application.Factory" />
+        <item itemvalue="Application.Singleton" />
       </list>
-    </option>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -104,6 +160,20 @@
       <updated>1575365288855</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1575367670457">
